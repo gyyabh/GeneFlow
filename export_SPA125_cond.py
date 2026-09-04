@@ -33,6 +33,6 @@ for res in resolutions:
 slide_img_ebd = torch.cat(img_ebd_list, axis=1)  # (num_spots, 4608)
 
 assert slide_img_ebd.shape[0] == num_spots
-torch.save(slide_img_ebd, "./kidney_results/runs(NCBI692)/004/samples/NCBI692_cond.pt")
-print("Saved cond to ./kidney_results/runs(NCBI692)/004/samples/NCBI692_cond.pt",
+torch.save(slide_img_ebd, "./kidney_results/.../NCBI692_cond.pt")
+print("Saved cond to ./kidney_results/.../NCBI692_cond.pt",
       "shape =", slide_img_ebd.shape)
