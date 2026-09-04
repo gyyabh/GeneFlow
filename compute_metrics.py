@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 """
-CUDA_VISIBLE_DEVICES=5,7 python compute_metrics.py --sample_path ./ablation_results/kidney/full_seed42/samples/generated_full_0375000_20sample.pt --data_path ./hest1k_datasets/kidney/processed_data/ --ori_st_path ./hest1k_datasets/kidney/st/ --slide_out NCBI697 --gene_list HMHVG.txt --topk 10 50 200
-compute_metrics.py
-
 Compute spatial gene-expression prediction metrics (PCC-k, MSE, MAE, RVD)
 for GeneFlow / Stem outputs. Ported from eval.ipynb.
 
@@ -163,7 +160,7 @@ def main():
         description="Compute ST prediction metrics (PCC-k, MSE, MAE, RVD)."
     )
     p.add_argument("--sample_path", type=str,
-                   default="./kidney_results/runs_0/000/samples/generated_samples_0400000_20sample.pt",
+                   default="",
                    help="Path to generated samples .pt")
     p.add_argument("--data_path", type=str, default="./hest1k_datasets/kidney/processed_data/",
                    help="Processed-data dir (holds all_slide_lst.txt and the gene list)")
