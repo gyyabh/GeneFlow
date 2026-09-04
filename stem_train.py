@@ -1,4 +1,4 @@
-# 简化版流匹配训练
+
 import torch
 
 # the first flag below was False when we tested this script but True makes A100 training a lot faster:
@@ -384,17 +384,17 @@ if __name__ == "__main__":
     parser.add_argument("--num_aug_ratio", type=int, default=0, help="Image augmentation ratio (int)")
     
     # model related arguments
-    parser.add_argument("--model", type=str, default="Stem")
-    parser.add_argument("--DiT_num_blocks", type=int, default=12, help="DiT depth")
-    parser.add_argument("--hidden_size", type=int, default=384, help="DiT hidden dimension")
+    parser.add_argument("--model", type=str, default="")
+    parser.add_argument("--DiT_num_blocks", type=int, default= , help="DiT depth")
+    parser.add_argument("--hidden_size", type=int, default=, help="DiT hidden dimension")
     parser.add_argument("--num_heads", type=int, default=6, help="DiT heads")
     # training related arguments
-    parser.add_argument("--lr", type=float, default=1e-4)
-    parser.add_argument("--total_epochs", type=int, default=4000)
-    parser.add_argument("--global_batch_size", type=int, default=256)
-    parser.add_argument("--global_seed", type=int, default=42)
+    parser.add_argument("--lr", type=float, default=)
+    parser.add_argument("--total_epochs", type=int, default=)
+    parser.add_argument("--global_batch_size", type=int, default=)
+    parser.add_argument("--global_seed", type=int, default=)
     parser.add_argument("--num_workers", type=int, default=1, help="Number of GPUs to run the job")
-    parser.add_argument("--ckpt_every", type=int, default=25000, help="Number of iterations to save checkpoints.")
+    parser.add_argument("--ckpt_every", type=int, default=, help="Number of iterations to save checkpoints.")
     parser.add_argument("--path_type", type=str, default="i", choices=["ot", "i","gauss"], help="Flow path type: 'ot' for OT-CFM (continuous t), 'i' for I-CFM (discrete/fixed t).",
 )
     input_args = parser.parse_args()
