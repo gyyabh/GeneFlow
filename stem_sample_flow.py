@@ -1,6 +1,4 @@
 # 流匹配推理脚本
-# python stem_sample_flow.py --checkpoint ./kidney_results/runs_0/004/checkpoints/0400000.pt --cond_path ./kidney_results/runs_ot/002/samples/NCBI697_cond.pt --output_dir ./kidney_results/runs_0/000/samples/ --input_gene_size 200 --cond_size 4608 --DiT_num_blocks 12 --hidden_size 384 --num_heads 6 --num_steps 100 --device cuda:0
-import os
 import torch
 import argparse
 import numpy as np
@@ -20,12 +18,12 @@ def load_checkpoint(checkpoint_path, model):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--checkpoint", type=str, default="./kidney_results/runs_loss/000/checkpoints/0025000.pt", help="Path to EMA checkpoint .pt")
-    parser.add_argument("--cond_path", type=str, default="./kidney_results/runs_ot/002/samples/NCBI697_cond.pt", help="Path to condition embedding .pt")
-    parser.add_argument("--output_dir", type=str, default="./kidney_results/runs_loss/000/samples/", help="Directory to save results")
+    parser.add_argument("--checkpoint", type=str, default="./kidney_results/", help="Path to EMA checkpoint .pt")
+    parser.add_argument("--cond_path", type=str, default="./kidney_results/", help="Path to condition embedding .pt")
+    parser.add_argument("--output_dir", type=str, default="./kidney_results/", help="Directory to save results")
     parser.add_argument("--sample_num_per_cond", type=int, default=20, help="Used for filename only")
     parser.add_argument("--model", type=str, default="Stem")
-    parser.add_argument("--input_gene_size", type=int, default=200)
+    parser.add_argument("--input_gene_size", type=int, default=)
     parser.add_argument("--cond_size", type=int, default=4608)
     parser.add_argument("--DiT_num_blocks", type=int, default=12)
     parser.add_argument("--hidden_size", type=int, default=384)
