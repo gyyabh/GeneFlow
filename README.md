@@ -51,8 +51,8 @@ Geneflow/
 │   └── train_helper.py               # (legacy, for Stem baseline)
 │
 ├── train.py                       # Main training script (GeneFlow)
-├── stem_train.py                  # Training script (Stem baseline)
-├── stem_sample_flow.py            # Inference script → outputs .pt / .npy
+├── s_train.py                  # Training script 
+├── sample_flow.py                 # Inference script → outputs .pt / .npy
 ├── export_SPA125_cond.py          # Build condition embeddings for test slide
 │
 ├── compute_metrics.py             # Evaluate PCC-10/50/200, MSE, MAE, RVD
@@ -176,7 +176,7 @@ python export_SPA125_cond.py
 ### Step 2: Run inference
 
 ```bash
-python stem_sample_flow.py \
+python sample_flow.py \
     --checkpoint     ./kidney_results/runs/000/checkpoints/0400000.pt \
     --cond_path      ./kidney_results/runs/000/samples/NCBI697_cond.pt \
     --output_dir     ./kidney_results/runs/000/samples/ \
@@ -255,7 +255,7 @@ Outputs a 2×4 subplot figure (normalized and absolute variance, upper and lower
 Pretrained checkpoints for all four datasets will be released at:
 
 ```
-https://github.com/gyyabh/Geneflow
+https://github.com/gyyabh/GeneFlow
 ```
 
 ---
